@@ -1,0 +1,81 @@
+html,
+body,
+#viewDiv {
+  height: 100%;
+  width: 100%;
+}
+
+h1,h2,h3{
+    align-items: center;
+    text-align: center;
+}
+
+
+canvas {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.fa-eye:hover,
+fa-eye-slash:hover,
+.fa-file:hover,
+.fa-print:hover {
+  color: red;
+  cursor: pointer;
+}
+
+table, th, td {
+  border: 1px solid black;
+  align-items:center;
+  text-align: center;
+}
+
+
+.center {
+  align-items:center;
+  text-align: center;
+  margin: auto;
+  width: auto;
+  padding: 30px;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.txt-center{
+  text-align: center;
+}

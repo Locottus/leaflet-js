@@ -1,5 +1,7 @@
-var OWM_API_KEY = "98674de6a91859bcea48ba07be964379";
 console.log("start of line");
+var x = 0;
+var y = 0;
+var OWM_API_KEY = "98674de6a91859bcea48ba07be964379";
 
 //main map layer
 var map = L.map("map").setView([14.628434, -90.522713], 7);
@@ -72,7 +74,7 @@ var wind = L.OWM.wind({ opacity: 0.5, appId: OWM_API_KEY });
 var baseMaps = {
   OSM: osm,
   "Google Street Map": googleStreets,
-  Humanitarian: humanitarian,
+  "Humanitarian": humanitarian,
   "Mapa Obscuro": dark,
   "Google Satellite": googleSat,
 
@@ -98,23 +100,20 @@ L.control.layers(baseMaps, layers).addTo(map);
 //set clickable event -->left click
 map.on("click", function (e) {
   console.log("clicked map ", e.latlng /*.lat,e.latlng.lng*/);
+  this.x = e.latlng.lng;
+  this.y = e.latlng.lat;
+
+  var url =   "clima-widget.html?titulo=Clima" +   "&y=" +  this.y +  "&x=" +  this.x;
+  
+  console.log(url);
+  myWindow = window.open(url, "", "scrollbars=1,menubar=1,resizable=1,width=500,height=300");
+  myWindow.focus();
+
 });
 
 map.on("contextmenu", function (e) {
-
-  window.showAlert = function () {
-    var forma = `
-        <i class="fas fa-anchor"></i>
-        <button type="button" class="btn btn-primary" onclick = "alert('clicked')">Primary</button>
-        <button type="button" class="btn btn-secondary">Secondary</button>
-        <button type="button" class="btn btn-success">Success</button>
-        <button type="button" class="btn btn-danger">Danger</button>
-        
-        `;
-    alertify.alert(forma);
-  };
-
-  window.showAlert();
+    console.log('RIGHT CLICK');
 });
+
 
 console.log("end of line");
