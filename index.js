@@ -1,5 +1,5 @@
 var OWM_API_KEY = '98674de6a91859bcea48ba07be964379';
-//console.log("hola mundo!");
+console.log("hola mundo!");
 
 
 //main map layer
@@ -75,11 +75,25 @@ map.on('contextmenu', function(e) {
         "OSM": osm,
         "Google Street": googleStreets,
         "Humanitarian" : humanitarian,
-        "cloudscls":cloudscls,
-        "CLOUDS": clouds
+        
+        //"CLOUDS": clouds
     };
 
-    L.control.layers(baseMaps).addTo(map);
+    var layers = {
+        "Nubes cls":cloudscls,
+        "Nuebes" :clouds,
+        "precipitacion": precipitation,
+        "Precipitacion cls" :precipitationcls,
+        "lluvia":rain,
+        "lluvia cls":raincls,
+        "nieve":snow,
+        "presion":pressure,
+        "presion cntr":pressurecntr,
+        "temperatura":temp,
+        "viento":wind
+    }
 
+    L.control.layers(baseMaps,layers).addTo(map);
+    //map.addLayer(clouds);
 
 console.log("end of line");
