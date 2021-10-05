@@ -56,12 +56,9 @@ var clouds = L.OWM.clouds({
 });
 var cloudscls = L.OWM.cloudsClassic({ opacity: 0.5, appId: OWM_API_KEY });
 var precipitation = L.OWM.precipitation({ opacity: 0.5, appId: OWM_API_KEY });
-var precipitationcls = L.OWM.precipitationClassic({
-  opacity: 0.5,
-  appId: OWM_API_KEY,
-});
-var rain = L.OWM.rain({ opacity: 0.5, appId: OWM_API_KEY });
-var raincls = L.OWM.rainClassic({ opacity: 0.5, appId: OWM_API_KEY });
+var precipitationcls = L.OWM.precipitationClassic({opacity: 0.5,  appId: OWM_API_KEY,}).addTo(map);
+//var rain = L.OWM.rain({ opacity: 0.5, appId: OWM_API_KEY });
+//var raincls = L.OWM.rainClassic({ opacity: 0.5, appId: OWM_API_KEY });
 var snow = L.OWM.snow({ opacity: 0.5, appId: OWM_API_KEY });
 var pressure = L.OWM.pressure({ opacity: 0.4, appId: OWM_API_KEY });
 var pressurecntr = L.OWM.pressureContour({ opacity: 0.5, appId: OWM_API_KEY });
@@ -83,12 +80,12 @@ var baseMaps = {
 
 var layers = {
   "Nubes clasico": cloudscls,
-  "Nuebes": clouds,
-  "Precipitacion": precipitation,
+  //"Nuebes": clouds,
+  //"Precipitacion": precipitation,
   "Precipitacion clasico": precipitationcls,
-  "Lluvia": rain,
-  "Lluvia clasico": raincls,
-  "Nieve": snow,
+  //"Lluvia": rain,
+  //"Lluvia clasico": raincls,
+  //"Nieve": snow,
   "Presion": pressure,
   "Presion cntr": pressurecntr,
   "Temperatura": temp,
